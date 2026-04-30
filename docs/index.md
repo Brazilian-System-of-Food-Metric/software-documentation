@@ -145,10 +145,10 @@ hide:
 <div class="bsfm-card">
   <h2>Navegação Rápida</h2>
   <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-    <a href="https://isaque-medeiros.github.io/pim-03semestre-ads/about/visao-missao.html" class="bsfm-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Visão e Missão</a>
-    <a href="https://isaque-medeiros.github.io/pim-03semestre-ads/roadmap/index.html" class="bsfm-btn bsfm-btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Roadmap</a>
-    <a href="https://isaque-medeiros.github.io/pim-03semestre-ads/changelog/index.html" class="bsfm-btn bsfm-btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Changelog</a>
-    <a href="https://brazilian-system-of-food-metric.github.io/software-documentation/docs/caso-de-uso/" class="bsfm-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Casos de Uso</a>
-    <a href="https://brazilian-system-of-food-metric.github.io/software-documentation/docs/glossario/" class="bsfm-btn bsfm-btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Glossário</a>
+    <a href="https://brazilian-system-of-food-metric.github.io/software-documentation/about/visao-missao.html" class="bsfm-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Visão e Missão</a>
+    <a href="https://brazilian-system-of-food-metric.github.io/software-documentation/roadmap/index.html" class="bsfm-btn bsfm-btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Roadmap</a>
+    <a href="https://brazilian-system-of-food-metric.github.io/software-documentation/changelog/index.html" class="bsfm-btn bsfm-btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Changelog</a>
+    <a href="https://brazilian-system-of-food-metric.github.io/software-documentation/caso-de-uso/index.html" class="bsfm-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Casos de Uso</a>
+    <a href="https://brazilian-system-of-food-metric.github.io/software-documentation/glossario/index.html" class="bsfm-btn bsfm-btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Glossário</a>
   </div>
 </div>
