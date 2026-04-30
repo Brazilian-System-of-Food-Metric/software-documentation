@@ -12,13 +12,13 @@ hide:
   <p>Projeto acadêmico de plataforma de nutrição inteligente desenvolvido por estudantes da UNIP. Este é um <strong>protótipo em desenvolvimento</strong> que utiliza inteligência artificial para análise nutricional de alimentos.</p>
   
   <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-    <a href="https://brazilian-system-of-food-metric.github.io/software-documentation/docs/guia-usuario/introducao.html" class="bsfm-btn">
+    <a href="https://brazilian-system-of-food-metric.github.io/software-documentation/guia-usuario/introducao.html" class="bsfm-btn">
       <svg style="margin-right: 0.5rem;" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12,2L14.85,8.15L21,11L14.85,13.85L12,20L9.15,13.85L3,11L9.15,8.15L12,2M12,17.27L13.1,14.9L15.47,13.8L13.1,12.7L12,10.33L10.9,12.7L8.53,13.8L10.9,14.9L12,17.27Z"/>
       </svg>
       Guia do Usuário
     </a>
-    <a href="https://brazilian-system-of-food-metric.github.io/software-documentation/docs/guia-desenvolvedor/" class="bsfm-btn bsfm-btn-secondary">
+    <a href="https://brazilian-system-of-food-metric.github.io/software-documentation/guia-desenvolvedor/index.html" class="bsfm-btn bsfm-btn-secondary">
       <svg style="margin-right: 0.5rem;" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
         <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M13,9V3.5L18.5,9H13Z"/>
       </svg>
@@ -146,7 +146,7 @@ hide:
   <h2>Navegação Rápida</h2>
   <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
     <a href="https://isaque-medeiros.github.io/pim-03semestre-ads/about/visao-missao.html" class="bsfm-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Visão e Missão</a>
-    <a href="https://brazilian-system-of-food-metric.github.io/software-documentation/docs/roadmap/" class="bsfm-btn bsfm-btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Roadmap</a>
+    <a href="https://isaque-medeiros.github.io/pim-03semestre-ads/roadmap/index.html" class="bsfm-btn bsfm-btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Roadmap</a>
     <a href="https://isaque-medeiros.github.io/pim-03semestre-ads/changelog/index.html" class="bsfm-btn bsfm-btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Changelog</a>
     <a href="https://brazilian-system-of-food-metric.github.io/software-documentation/docs/caso-de-uso/" class="bsfm-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Casos de Uso</a>
     <a href="https://brazilian-system-of-food-metric.github.io/software-documentation/docs/glossario/" class="bsfm-btn bsfm-btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Glossário</a>
