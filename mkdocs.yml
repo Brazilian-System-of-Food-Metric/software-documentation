@@ -39,7 +39,7 @@ theme:
     repo: fontawesome/brands/github
 
 repo_name: BSFM/Brazilian-System-of-Food-Metric
-repo_url: https://github.com/BSFM/Brazilian-System-of-Food-Metric
+repo_url: https://github.com/Brazilian-System-of-Food-Metric
 
 plugins:
   - search
