@@ -1,55 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://bsfm.com.br/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <loc>https://isaque-medeiros.github.io/software-documentation/index.html</loc>
+         <lastmod>2026-04-30</lastmod>
     </url>
     <url>
-         <loc>https://bsfm.com.br/comecar-aprender/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <loc>https://isaque-medeiros.github.io/software-documentation/about/visao-missao.html</loc>
+         <lastmod>2026-04-30</lastmod>
     </url>
     <url>
-         <loc>https://bsfm.com.br/config/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <loc>https://isaque-medeiros.github.io/software-documentation/bsfm/comecar-aprender.html</loc>
+         <lastmod>2026-04-30</lastmod>
     </url>
     <url>
-         <loc>https://bsfm.com.br/instalacao/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <loc>https://isaque-medeiros.github.io/software-documentation/bsfm/config.html</loc>
+         <lastmod>2026-04-30</lastmod>
     </url>
     <url>
-         <loc>https://bsfm.com.br/planejamento/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <loc>https://isaque-medeiros.github.io/software-documentation/bsfm/database-schema.html</loc>
+         <lastmod>2026-04-30</lastmod>
     </url>
     <url>
-         <loc>https://bsfm.com.br/referencia/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <loc>https://isaque-medeiros.github.io/software-documentation/bsfm/instalacao.html</loc>
+         <lastmod>2026-04-30</lastmod>
     </url>
     <url>
-         <loc>https://bsfm.com.br/caso-de-uso/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <loc>https://isaque-medeiros.github.io/software-documentation/bsfm/planejamento.html</loc>
+         <lastmod>2026-04-30</lastmod>
     </url>
     <url>
-         <loc>https://bsfm.com.br/changelog/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <loc>https://isaque-medeiros.github.io/software-documentation/bsfm/referencia.html</loc>
+         <lastmod>2026-04-30</lastmod>
     </url>
     <url>
-         <loc>https://bsfm.com.br/glossario/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <loc>https://isaque-medeiros.github.io/software-documentation/caso-de-uso/index.html</loc>
+         <lastmod>2026-04-30</lastmod>
     </url>
     <url>
-         <loc>https://bsfm.com.br/guia-desenvolvedor/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <loc>https://isaque-medeiros.github.io/software-documentation/changelog/index.html</loc>
+         <lastmod>2026-04-30</lastmod>
     </url>
     <url>
-         <loc>https://bsfm.com.br/guia-usuario/introducao/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <loc>https://isaque-medeiros.github.io/software-documentation/glossario/index.html</loc>
+         <lastmod>2026-04-30</lastmod>
     </url>
     <url>
-         <loc>https://bsfm.com.br/roadmap/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <loc>https://isaque-medeiros.github.io/software-documentation/guia-desenvolvedor/index.html</loc>
+         <lastmod>2026-04-30</lastmod>
     </url>
     <url>
-         <loc>https://bsfm.com.br/sobre/visao-missao/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <loc>https://isaque-medeiros.github.io/software-documentation/guia-usuario/introducao.html</loc>
+         <lastmod>2026-04-30</lastmod>
+    </url>
+    <url>
+         <loc>https://isaque-medeiros.github.io/software-documentation/roadmap/index.html</loc>
+         <lastmod>2026-04-30</lastmod>
     </url>
 </urlset>
