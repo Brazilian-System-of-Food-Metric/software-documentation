@@ -1,0 +1,43 @@
+
+---
+
+### 1. A Estrutura Técnica (A "Ponte" C# & Python)
+
+*   **O "Corpo" (C# / .NET):** Ficará responsável pela **gestão de dados e segurança**. Cadastro de usuários, login, armazenamento de dietas, integração com banco de dados SQL Server, e toda a lógica de negócio pesada e segura.
+*   **O "Cérebro" (Python):** Funcionará como um **serviço de IA dedicado**. O C# envia o texto do rótulo ou a foto para o Python; o Python processa usando as bibliotecas de IA (como TensorFlow ou Scikit-learn) e devolve a resposta estruturada em **JSON** para o C#.
+
+---
+
+### 2. Ideias Concretas de Funcionalidades (Ponto a Ponto)
+
+*   **Identificador de Alérgenos Estendido (IA - Python):**
+    *   *Ideia:* Não focar apenas em calorias. A IA detecta sinônimos perigosos de açúcar (xarope de milho, dextrose) e gordura trans.
+*   **Calculadora Dinâmica de Hidratação (C#):**
+    *   *Ideia:* O sistema cruza o peso do usuário, a temperatura da cidade (via API de clima) e a atividade física para sugerir a meta exata de água no dia.
+*   **Histórico de Sintomas (C# + Banco de Dados):**
+    *   *Ideia:* Um diário onde o usuário marca se teve azia, refluxo ou cansaço. A IA então cruza esses dados com o que ele comeu nos últimos 3 dias para encontrar padrões de intolerância.
+
+---
+
+### 3. Termos e Contratos (Proteção Legal do Grupo)
+
+*   **Cláusula de Isenção (C# / Frontend):** Um aviso obrigatório ao iniciar o app: *"Este sistema é informativo. Sempre consulte um médico antes de iniciar dietas restritivas"*. 
+*   **Gestão de Dados Sensíveis (LGPD):** O grupo precisa decidir: onde salvaremos esses dados? Se houver um vazamento, a quem pertence a responsabilidade?
+*   **Termo de Consentimento de IA:** O usuário deve aceitar que seus dados alimentem anonimamente a melhoria da inteligência artificial.
+
+---
+
+### 4. Modelo de Organização (ONG ou Lucro?)
+
+*   **A "ONG Tecnológica":** Podemos focar em combater a fome e a intoxicação em áreas carentes, buscando parcerias com o governo. (É bonito para o portfólio acadêmico).
+*   **A "Startup de Saúde" (Com lucro):** Focar no mercado Fitness de elite para financiar a plataforma, com um modelo "B" (Empresa Social): o lucro das vendas de planos ajuda a sustentar o uso gratuito para famílias de baixa renda.
+
+---
+
+### Perguntas Sugeridas para a sua Reunião:
+
+1.  *"Pessoal, para o frontend (a cara do site), vamos usar JavaScript puro ou algum Framework (como React) para integrar melhor com o C#?"*
+2.  *"Como o C# vai passar os dados para o meu script Python sem deixar o sistema lento? Usaremos uma API local ou troca de arquivos JSON?"*
+3.  *"O banco de dados deve salvar as fotos que os usuários tirarem dos rótulos (ocupa muito espaço) ou apenas o texto extraído deles (mais leve)?"*
+
+

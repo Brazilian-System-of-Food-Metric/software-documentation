@@ -1,0 +1,78 @@
+🛠Developing Session🔨
+
+---
+*GitHub Repository:* https://github.com/Isaque-Medeiros/pim-03semestre-ads
+*Code Space:* 
+*DesenvolvimentoStep:*
+---
+
+*🎯Objetivo da nossa ONG:*
+~~
+NOME: [Ainda_Pensando...]
+~~ 
+Nossa organização tem como principal objetivo, incentivar o consumo de uma alimentação equilibrada e saudável.
+Trazendo para o usuário uma série de opções para pratos de comida, seguindo o necessário para manter uma dieta
+essêncial para saúde do próprio usuário.
+
+Isso vai amenizar nos impactos de intoxicação alimentar, que é um dos principais problemas enfrentados quando o
+assunto é alimentação.
+---
+*Atividades:*
+
+[x]- Metodologia de Software Ágil (Todos)
+[ ]- Projetar e implementar a modelagem de dados 
+[ ]- Desenvolver Funcionalidades em C# POO (Isaque)
+[ ]- Construir interface Web
+[ ]- Aplicar conceito de UX e UI
+[ ]- Tecnicas Machine Learning
+[ ]- Incorporar princípios Básicos de LIBRAS
+---
+O que fazer em cada:
+
+- *Metodologia de Software Ágil (Todos):* 
+* Indentificar todos os envolvidos(Stakeholders)
+* Requisitos funcionais
+* Requisitos não funcionais
+* Funcionalidades em backlog
+* Priorização das funcionalidades
+* Definição de termos e critérios de aceite
+
+- *Modelagem de Banco de Dados e NoSQL:*
+* Indentificar as informações essenciais ao negócio ficticio
+* Extrair os dados das informações (Atores, produtos, etc..)
+* Relacionar os dados usando o modelo lógico de tabelas
+* Por quê escolheu banco de dados relacional e/ou NoSQL
+* Descrição das principais funções e consultas previstas
+
+- *Desenvolver Funcionalidades em C# POO:*
+* Descrição da arquitetura geral da aplicação
+* Implementação das funcionalidades principais utilizando c#
+* Aplicação de POO
+* Apresentar no código explicações # or //
+
+- *Construir interface Web*
+* Desenvolvimento das telas com foco em responsividade
+* Adaptar em diferentes telas (celular, computador, tv...)
+* Integrar o Front-end com Back-end
+* Apresentação das telas, prototipos ou print
+
+- *Aplicar conceito de UX e UI*
+* definição de personas representativas dos usuários
+* descrição dos principais fluxos de navegação
+* elaboração de wireframes ou prototipos de telas
+*análise basica de usabilidade, com indentificação de melhorias
+
+- *Tecnicas Machine Learning*
+* Tipos de dados relevantes para análise
+* Aplicação tecnica basica de analise de dados para machine learning
+* geração de relatórios, indicadores ou previsões simples
+* interpretação dos resultados no contexto do negócio
+
+- *Incorporar princípios Básicos de LIBRAS*
+* Estrategias de comunicação utilizada no desenvolvimento do projeto;
+* Situações de simulações de negociação e liderança relacionada à definição e priorização de funcionalidades;
+* Proposta de ação voldada à acessibilidade e incorporar principios básicos de LIBRAS ao sistema ou à documentação.
+
+
+
+
