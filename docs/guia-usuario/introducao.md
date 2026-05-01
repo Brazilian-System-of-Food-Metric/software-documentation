@@ -12,11 +12,13 @@ Bem-vindo ao **BSFM (Brazilian System of Food Metric)**! Este guia irá ajudá-l
 O BSFM é uma plataforma de análise nutricional que utiliza **inteligência artificial** para ajudar você a:
 
 - **Analisar alimentos** através de fotos do seu prato
+- **Escaneiar rótulos nutricionais** com OCR e receber feedback personalizado
 - **Acompanhar suas métricas de saúde** como IMC, TMB e gasto calórico
 - **Definir e acompanhar metas** pessoais de saúde e nutrição
 - **Localizar serviços de saúde** próximos (UPAs e hospitais)
 - **Planejar suas refeições** com cronogramas personalizados
 - **Registrar consumo de água** diário
+- **Gerenciar dados de saúde** como diabetes e intolerâncias alimentares
 
 ---
 
@@ -50,7 +52,16 @@ Após o cadastro, complete seu perfil para análises personalizadas:
   - Ativo (3-5 dias/semana)
   - Muito ativo (6-7 dias/semana)
 
-### 3. Explore o Dashboard
+### 3. Configure seus Dados de Saúde
+
+No menu **Perfil** > **Dados de Saúde**, informe:
+
+- **Diabetes**: Tipo 1, Tipo 2, Pré-diabetes, Gestacional ou Não
+- **Intolerâncias Alimentares**: Lactose, Glúten, etc.
+
+Esses dados são usados pela IA para personalizar o feedback nutricional.
+
+### 4. Explore o Dashboard
 
 Seu dashboard pessoal mostra:
 
@@ -64,12 +75,24 @@ Seu dashboard pessoal mostra:
 
 ## Funcionalidades
 
-### Análise por IA
+### Análise por IA (Prato)
 
 1. Acesse o **Analisador IA**
 2. Tire uma foto do alimento
 3. Selecione o tamanho da porção (pequeno, médio, grande)
-4. Veja os resultados nutricionais
+4. Veja os resultados nutricionais com feedback personalizado
+
+### Analisador de Rótulos (OCR)
+
+1. Acesse o **Analisador de Rótulos**
+2. Aponte a câmera para a tabela nutricional de um produto
+3. O sistema extrai o texto automaticamente via OCR
+4. A IA analisa e retorna:
+   - **Produto detectado**
+   - **Health Score** (0-10)
+   - **Pode Consumir** (Sim/Não/Moderado)
+   - **Análise personalizada** baseada no seu perfil
+   - **Dica BSFM** com sugestões
 
 ### Dashboard e Métricas
 
@@ -133,6 +156,22 @@ A: O modelo YOLO tem precisão limitada por ser um protótipo acadêmico. Os res
 
 **Q: E se a IA não reconhecer meu alimento?**
 A: Você pode tentar outra foto com melhor ângulo/iluminação ou buscar manualmente na base de dados.
+
+### Analisador de Rótulos
+
+**Q: Como funciona o OCR de rótulos?**
+A: O Tesseract.js processa a imagem diretamente no seu navegador (nada é enviado ao servidor). Apenas o texto extraído é enviado para análise pela IA.
+
+**Q: Preciso de internet para usar o OCR?**
+A: Sim, o OCR precisa carregar o modelo Tesseract.js da CDN na primeira vez.
+
+### Dados de Saúde
+
+**Q: Para que servem os dados de diabetes e intolerância?**
+A: A IA considera essas informações para gerar alertas personalizados. Por exemplo, se você tem diabetes, a IA alertará sobre açúcares adicionados.
+
+**Q: Posso alterar meus dados de saúde depois?**
+A: Sim, em **Perfil** > **Dados de Saúde** você pode atualizar quando quiser.
 
 ### Conta e Perfil
 

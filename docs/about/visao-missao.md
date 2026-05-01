@@ -19,6 +19,7 @@
    - Desenvolver soluções de IA que reconheçam e analisem alimentos
    - Criar interfaces intuitivas que qualquer pessoa possa usar
    - Integrar pesquisas em nutrição e machine learning
+   - Implementar Split Architecture para análise de rótulos (OCR + LLM)
 
 2. **Contexto Brasileiro**
    - Adaptar tecnologias globais à realidade alimentar brasileira
@@ -27,10 +28,12 @@
 3. **Impacto na Saúde Pública**
    - Apoiar a redução de índices de obesidade e diabetes
    - Contribuir para políticas públicas de alimentação saudável
+   - Oferecer feedback personalizado baseado em condições de saúde (diabetes, intolerâncias)
 
 4. **Acesso Democrático**
    - Oferecer serviços gratuitos para a população
    - Garantir acessibilidade para pessoas com deficiência
+   - Disponibilizar análise nutricional via PWA em dispositivos móveis
 
 ## Valores Fundamentais
 
@@ -53,6 +56,7 @@
     - Pessoas que buscam melhorar hábitos alimentares
     - Comunidades com acesso limitado a nutricionistas
     - Usuários de aplicativos de saúde e bem-estar
+    - Pessoas com diabetes ou intolerâncias alimentares
 
 ### 2. Profissionais de Saúde
 !!! check "Ferramentas de Apoio"
@@ -74,14 +78,20 @@ nutricionais:
 ia:
   - YOLO Custom Model: Modelo de detecção de alimentos
   - ONNX Runtime: Inferência otimizada
+  - Groq Llama 3: LLM para feedback nutricional personalizado
+  - Tesseract.js: OCR para escaneamento de rótulos
+
+email:
+  - Brevo API: Serviço de email transacional
 ```
 
 ## Status Atual do Projeto
 
 - **Início do desenvolvimento:** 29 de fevereiro de 2026
 - **Status:** Protótipo acadêmico em desenvolvimento
+- **Versão atual:** 1.3.5 (CoreAnalytics)
 - **Equipe:** 4 estudantes de ADS - UNIP
-- **Funcionalidades implementadas:** Cadastro, login, dashboard, análise de alimentos por IA, mapa de hospitais, diário alimentar, plano de refeições, consumo de água
+- **Funcionalidades implementadas:** Cadastro, login, dashboard, análise de alimentos por IA, analisador de rótulos OCR, mapa de hospitais, diário alimentar, plano de refeições, consumo de água, dados de saúde (diabetes/intolerâncias), Health Score com feedback Groq
 - **Próximos passos:** Refinamento da IA, correção de bugs, melhorias de UI/UX
 
 ---

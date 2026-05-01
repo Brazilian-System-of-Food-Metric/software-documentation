@@ -25,26 +25,31 @@ João quer melhorar seus hábitos alimentares e precisa de orientação acessív
    - Cria conta gratuita
    - Informa dados básicos (idade, peso, altura)
    - Define objetivos pessoais
+   - Informa condições de saúde (diabetes, intolerâncias)
 
 2. **Acompanhamento Diário**
    - Registra refeições via web
-   - Recebe análise nutricional
+   - Recebe análise nutricional com IA
+   - Escaneia rótulos de produtos com OCR
    - Visualiza progresso em gráficos
 
-3. **Recomendações**
-   - Recebe sugestões de receitas
-   - Encontra alternativas mais saudáveis
-   - Aprende sobre nutrição
+3. **Recomendações Personalizadas**
+   - Recebe feedback IA baseado no perfil de saúde
+   - Health Score com alertas restritivos
+   - Sugestões de substituições alimentares
 
 ### Funcionalidades Implementadas
 - ✅ Cadastro e login
 - ✅ Dashboard com métricas (IMC, TMB, TDEE)
-- ✅ Análise de alimentos por IA
+- ✅ Análise de alimentos por IA (YOLO + USDA)
+- ✅ Análise de rótulos (OCR + Groq LLM)
 - ✅ Diário alimentar
 - ✅ Plano de refeições semanal
 - ✅ Consumo de água
 - ✅ Gráficos de evolução
 - ✅ Mapa SOS Saúde
+- ✅ Dados de saúde (diabetes, intolerâncias)
+- ✅ Health Score com feedback personalizado
 
 ---
 
@@ -58,11 +63,13 @@ Maria é nutricionista e quer usar ferramentas digitais para acompanhar paciente
    - Importa dados básicos do paciente
    - Define objetivos
    - Registra preferências alimentares
+   - Anota condições de saúde (diabetes, intolerâncias)
 
 2. **Análise Automática**
    - Sistema analisa padrões alimentares
    - Identifica deficiências nutricionais
    - Sugere ajustes na dieta
+   - IA gera feedback personalizado por paciente
 
 3. **Monitoramento**
    - Acompanha progresso em tempo real
@@ -95,6 +102,9 @@ Um desenvolvedor quer integrar análise nutricional em seu aplicativo.
 | Método | Rota | Descrição |
 |--------|------|-----------|
 | POST | `/analisar-prato` | Analisa imagem de alimento |
+| POST | `/api/rotulo/analisar` | Analisa texto OCR de rótulo |
+| GET | `/api/saude/{id}` | Dados de saúde do usuário |
+| PUT | `/api/saude/atualizar` | Atualiza dados de saúde |
 | GET | `/dashboard` | Dados do dashboard |
 | GET | `/health` | Health check |
 
@@ -119,4 +129,4 @@ Um desenvolvedor quer integrar análise nutricional em seu aplicativo.
 
 ---
 
-**Última atualização:** Abril 2026
+**Última atualização:** 01 de Maio de 2026

@@ -1,140 +1,118 @@
-# Changelog BSFM
+# Changelog
 
-Este documento registra todas as mudanças significativas no **BSFM (Brazilian System of Food Metric)**. Seguimos o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/) e versionamento [Semantic Versioning](https://semver.org/lang/pt-BR/).
+Todas as mudanças notáveis no projeto BSFM serão documentadas neste arquivo.
 
----
-
-## [1.3.0] - 2026-04-29
-
-### 🚀 Atualização Pré-Definitiva - PWA e Correções Finais
-**Versão de aprimoramento final antes da entrega acadêmica.**
-
-### Novas Funcionalidades
-- **PWA (Progressive Web App)**: Aplicação instalável em dispositivos móveis com manifest.json e service worker
-- **Ícone SVG do BSFM**: Logotipo otimizado para PWA com folha verde gradiente
-- **Seção "Baixe o App"**: Opção de download na landing page com QR Code e APK
-
-### Melhorias Técnicas
-- **Meta tags PWA**: Adicionadas em todas as páginas HTML (index, login, dashboard, diario, analisador-ia, metas, planos, hospitais, libras)
-- **Service Worker**: Cache offline com estratégia network-first para melhor performance
-- **Documentação MkDocs atualizada**: Conteúdo revisado com informações realistas de protótipo
-- **Correção de navegação**: Links rápidos da home page corrigidos para caminhos corretos
-- **Paleta de cores ajustada**: Barra de navegação da documentação alterada de vermelho para preto com detalhes em laranja, combinando com o tema escuro
-
-### Correções
-- Links quebrados na página inicial da documentação corrigidos
-- Conteúdo exagerado substituído por informações transparentes sobre o status de protótipo acadêmico
+O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/),
+e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
 ---
 
-## [1.2.0] - 2026-04-28
+## [1.3.5] - 2026-05-01 - CoreAnalytics
 
-### 🎯 Remasterização Final - Versão de Entrega Acadêmica
-**Última versão do protótipo para apresentação do PIM do 3º semestre.**
+### Adicionado
+- **BSFM.CoreAnalytics**: Módulo de análise de rótulos nutricionais com Split Architecture
+- **Analisador de Rótulos (OCR)**: Escaneamento de tabelas nutricionais com Tesseract.js
+- **Groq LLM Integration**: Motor NutriBrainService com Llama 3 para feedback personalizado
+- **Context Injector**: SystemPrompt com dados biométricos do usuário
+- **Health Score**: Pontuação de saúde (0-10) com feedback restritivo
+- **Dados de Saúde do Usuário**: Cadastro de diabetes e intolerâncias alimentares
+- **App Mobile - Login como Página Inicial**: App inicia diretamente no login
 
-### Novas Funcionalidades
-- **Consumo de Água**: Registro e acompanhamento diário/semanal de hidratação
-- **Plano de Refeições Semanal**: Agendamento de refeições por dia da semana com receitas
-- **Perfil do Usuário**: Edição de nome, senha e data de nascimento
-- **Gráficos de Evolução**: Chart.js integrado com dados reais do backend para peso e IMC
-- **Analisador IA com Viewfinder**: Interface profissional com efeitos de escaneamento
-- **Mapa SOS Saúde**: Leaflet integrado para localização de UPAs e hospitais
-- **Central LIBRAS**: Player de vídeo com suporte a PIP
+### Alterado
+- **AnaliseIA**: Novos campos (PodeConsumir, PontuacaoSaude, AnaliseEmRelacaoAMeta, DicaBSFM)
+- **Usuarios**: Novas colunas (Diabetes, Intolerancia)
+- **Migrações automáticas**: Adiciona colunas sem scripts SQL manuais
+- **Documentação MkDocs**: Atualizada com informações do CoreAnalytics
 
-### Melhorias Técnicas
-- **Refatoração completa do tema**: Padronização para tema claro (light-mode) em todas as páginas
-- **Animações de entrada**: Cards com fade-in-up escalonado no dashboard
-- **Métricas animadas**: Valores de IMC, TMB e TDEE com contagem animada
-- **Responsividade**: Layout adaptativo mobile-first em todas as páginas
-- **CORS configurado**: Política AllowAny para deploy no Render
-- **Retry de conexão**: Sistema de tentativas para conexão com PostgreSQL no startup
-- **Documentação revisada**: Remoção de informações inventadas, transparência total sobre o status de protótipo
-
-### Infraestrutura
-- **Render**: Configuração de deploy via render.yaml e Dockerfile
-- **PostgreSQL**: Suporte a Neon/Railway com parsing automático de DATABASE_URL
-- **Variáveis de ambiente**: PORT, DATABASE_URL, BREVO_API_KEY, USDA_API_KEY
+### Corrigido
+- **Navegação mobile**: App não fica mais na landing page, inicia no login
 
 ---
 
-## [1.1.0] - 2026-04-08
+## [1.3.0] - 2026-04-29 - Atualização Pré-Definitiva
 
-### Versão Remasterizada (metodologia SDD)
-**Refatoração estrutural e melhoria do processo de desenvolvimento.**
+### Adicionado
+- **PWA (Progressive Web App)**: Aplicação instalável em dispositivos móveis
+- **Service Worker**: Cache offline com estratégia network-first
+- **Ícone SVG do BSFM**: Logotipo otimizado para PWA
+- **Meta tags PWA**: Adicionadas em todas as páginas HTML
 
-### Novas Funcionalidades
-- Organização da documentação por seções e navegação revisada
-- Padronização de fluxo de trabalho com metodologia SDD
-- Evolução do design system
-
-### Infraestrutura
-- Planejamento inicial de deploy no Railway
-- Documentação hospedada no Vercel
-
----
-
-## [1.0.0] - 2026-03-20
-
-### Lançamento da v1
-**Primeira versão funcional publicada para validação do projeto.**
-
-### Base entregue
-- Primeira experiência de análise de alimentos por IA
-- Estrutura inicial de dashboard e autenticação
-- Primeira publicação técnica da documentação
+### Alterado
+- **Documentação MkDocs atualizada**: Conteúdo realista de protótipo
+- **Correção de navegação**: Links rápidos da home page corrigidos
+- **Paleta de cores ajustada**: Barra de navegação preta com detalhes em laranja
 
 ---
 
-## [0.9.0] - 2026-03-15
+## [1.2.0] - 2026-04-28 - Remasterização Final
 
-### Beta Interno
-**Versão beta para testes internos da equipe.**
+### Adicionado
+- **Consumo de água**: Registro diário e semanal de hidratação
+- **Plano de refeições semanal**: Agendamento de refeições por dia da semana
+- **Perfil do usuário**: Edição de dados pessoais
+- **Gráficos de evolução**: Chart.js para visualização de progresso
+- **Mapa SOS Saúde**: Leaflet para localização de UPAs e hospitais
+- **Central LIBRAS**: Conteúdo em Língua Brasileira de Sinais
 
-### Funcionalidades Implementadas
-- **Sistema de login e cadastro** básico
-- **Análise de alimentos** com modelo YOLO inicial
-- **Dashboard simples** com métricas básicas
-- **Integração USDA API** para dados nutricionais
-
-### Melhorias
-- Implementação do modelo YOLO para detecção de alimentos
-- Implementação de cache para consultas USDA
-- Melhoria na interface do analisador de alimentos
-
----
-
-## [0.8.0] - 2026-02-28
-
-### Alpha Técnico
-**Primeira versão funcional do backend.**
-
-### Funcionalidades Implementadas
-- **Backend .NET 8.0** com estrutura básica de rotas
-- **Modelo YOLO** treinado com dataset inicial
-- **Integração USDA API** funcionando
-- **Banco de dados SQLite** para desenvolvimento local
+### Alterado
+- **Refatoração do tema**: Light-mode como padrão
+- **Animações e melhorias de UI/UX**: Transições suaves e feedback visual
+- **Configuração de deploy no Render**: Dockerfile e render.yaml
+- **Documentação revisada**: Transparência sobre status de protótipo
 
 ---
 
-## Política de Versionamento
+## [1.1.0] - 2026-04-08 - Versão Remaster SDD
 
-### Versões Semânticas
-O BSFM segue o versionamento semântico `MAJOR.MINOR.PATCH`:
+### Adicionado
+- **Arquitetura refinada**: Baseada em metodologia SDD
+- **Melhorias na documentação técnica**
 
-1. **MAJOR**: Mudanças incompatíveis com versões anteriores
-2. **MINOR**: Novas funcionalidades compatíveis com versões anteriores
-3. **PATCH**: Correções de bugs compatíveis com versões anteriores
-
-### Categorias de Mudanças
-Cada versão é organizada por categorias:
-
-- **Novas Funcionalidades**: Novos recursos implementados
-- **Melhorias**: Aprimoramentos em funcionalidades existentes
-- **Correções de Bugs**: Resolução de problemas reportados
-- **Documentação**: Atualizações na documentação
-- **Infraestrutura**: Mudanças em deploy e configurações
+### Alterado
+- **Refatoração do código**: Melhor organização e separação de responsabilidades
 
 ---
 
-**Última atualização:** 29 de Abril de 2026  
-**Mantido por:** Equipe Técnica BSFM - UNIP
+## [1.0.0] - 2026-03-20 - Primeira Versão Funcional
+
+### Adicionado
+- **Backend .NET 8.0**: Rotas de API RESTful
+- **Sistema de cadastro e login**: Autenticação com verificação por email
+- **Dashboard**: Métricas básicas (IMC, TMB, TDEE)
+- **Análise de alimentos por IA**: YOLO Object Detection com modelo ONNX
+- **Integração com USDA API**: Consulta de dados nutricionais
+- **Diário alimentar**: Registro de refeições analisadas
+- **Banco de dados PostgreSQL**: Modelagem inicial
+
+---
+
+## [0.1.0] - 2026-02-29 - Início do Projeto
+
+### Adicionado
+- Definição do tema da ONG de nutrição
+- Criação do grupo de desenvolvimento
+- Divisão das tarefas entre os 4 integrantes
+- Planejamento dos RF (Requisitos Funcionais) e RNF (Requisitos Não Funcionais)
+- Identificação dos Stakeholders
+- Definição dos termos de contrato
+
+---
+
+## Notas de Versão
+
+### Compatibilidade
+- **v1.3.5**: Requer .NET 8.0+, PostgreSQL 15+ ou SQLite
+- **v1.3.0**: Requer .NET 8.0+, PostgreSQL 15+ ou SQLite
+- **v1.2.0**: Requer .NET 8.0+, PostgreSQL 15+ ou SQLite
+- **v1.0.0**: Requer .NET 8.0+, PostgreSQL 15+
+
+### Atualização
+Para atualizar de uma versão anterior:
+1. Faça backup do banco de dados
+2. Atualize o código fonte
+3. Execute `dotnet run` (migrações automáticas)
+4. Verifique o health check
+
+---
+
+**Última atualização:** 01 de Maio de 2026

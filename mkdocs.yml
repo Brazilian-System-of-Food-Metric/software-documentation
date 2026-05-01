@@ -99,9 +99,16 @@ nav:
     - Comecar a Aprender: bsfm/comecar-aprender.md
   - Referencia:
     - Referencia Tecnica: bsfm/referencia.md
-    - Database Schema: bsfm/database-schema.md
     - Casos de Uso: caso-de-uso/index.md
     - Glossario: glossario/index.md
+  - CoreAnalytics:
+    - Visao Geral: core-analytics/index.md
+    - NutriBrain Service: core-analytics/nutribrain.md
+    - Context Injector: core-analytics/context-injector.md
+    - OCR e Tesseract: core-analytics/ocr-tesseract.md
+    - Health Score: core-analytics/health-score.md
+    - Dados de Saude: core-analytics/dados-saude.md
+    - API de Rotulos: core-analytics/api-rotulos.md
 
 copyright: |
   Copyright (c) 2026-2036 Brazilian System of Food Metric | BSFM

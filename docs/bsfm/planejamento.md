@@ -33,14 +33,16 @@ A divisão das tarefas ficou assim:
 | 21/03 - 08/04 | Remasterização SDD | Designer e Desenvolvedor |
 | 09/04 - 28/04 | Remasterização final e deploy | Equipe BSFM |
 | 28/04 - 30/04 | Correções de bugs, implementando APK e Deploy | Desenvolvedor |
-
+| 01/05 | CoreAnalytics v1.3.5 - Motor de insights nutricionais | Equipe de Qualidade |
 
 ### Tecnologias Utilizadas
 
 - **Backend**: C# com ASP.NET Core 8.0
 - **Frontend**: HTML, CSS, JavaScript (Tailwind CSS)
 - **Banco de Dados**: PostgreSQL / SQLite
-- **IA**: YOLO Object Detection (ONNX)
+- **IA (Visão)**: YOLO Object Detection (ONNX)
+- **IA (Texto)**: Groq Llama 3 para feedback nutricional
+- **OCR**: Tesseract.js (processamento no navegador)
 - **Deploy**: Render
 - **Documentação**: MkDocs (Vercel)
 
@@ -56,3 +58,8 @@ A divisão das tarefas ficou assim:
 8. ✅ Central LIBRAS
 9. ✅ Perfil do usuário
 10. ✅ Gráficos de evolução (Chart.js)
+11. ✅ PWA (Progressive Web App)
+12. ✅ Analisador de Rótulos (OCR + Groq LLM)
+13. ✅ Dados de Saúde (Diabetes e Intolerâncias)
+14. ✅ Health Score com feedback personalizado
+15. ✅ App mobile inicia no login (não na landing page)

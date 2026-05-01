@@ -105,7 +105,7 @@ hide:
   
   <p>Como projeto acadêmico, buscamos aplicar conceitos de:</p>
   <ul>
-    <li><strong>Inteligência Artificial</strong> — Reconhecimento de alimentos por imagem</li>
+    <li><strong>Inteligência Artificial</strong> — Reconhecimento de alimentos por imagem e análise de rótulos com OCR + LLM</li>
     <li><strong>Engenharia de Software</strong> — Arquitetura limpa e boas práticas de desenvolvimento</li>
     <li><strong>UX/UI Design</strong> — Interfaces intuitivas e acessíveis</li>
     <li><strong>Banco de Dados</strong> — Modelagem e persistência de dados</li>
@@ -120,12 +120,15 @@ hide:
     <li>✅ <strong>Cadastro e Login</strong> — Autenticação com verificação por email</li>
     <li>✅ <strong>Dashboard</strong> — Métricas de IMC, TMB e gasto calórico com gráficos</li>
     <li>✅ <strong>Analisador IA</strong> — Detecção de alimentos por foto com dados nutricionais</li>
+    <li>✅ <strong>Analisador de Rótulos (OCR)</strong> — Escaneamento de tabelas nutricionais com feedback IA (Groq Llama 3)</li>
     <li>✅ <strong>Diário Alimentar</strong> — Registro de refeições analisadas</li>
     <li>✅ <strong>Plano de Refeições</strong> — Agendamento semanal de refeições</li>
     <li>✅ <strong>Consumo de Água</strong> — Registro e acompanhamento de hidratação</li>
     <li>✅ <strong>Mapa SOS Saúde</strong> — Localização de UPAs e hospitais</li>
     <li>✅ <strong>Central LIBRAS</strong> — Conteúdo em Língua Brasileira de Sinais</li>
     <li>✅ <strong>PWA</strong> — Aplicação instalável em dispositivos móveis</li>
+    <li>✅ <strong>Dados de Saúde</strong> — Cadastro de diabetes e intolerâncias alimentares</li>
+    <li>✅ <strong>Health Score</strong> — Pontuação de saúde com feedback personalizado</li>
   </ul>
 </div>
 
@@ -139,6 +142,7 @@ hide:
     <li>⬜ <strong>Notificações</strong> — Lembretes de refeições e hidratação</li>
     <li>⬜ <strong>Exportação de dados</strong> — Gerar relatórios em PDF</li>
     <li>⬜ <strong>App mobile nativo</strong> — Versão para iOS e Android</li>
+    <li>⬜ <strong>Melhorias no OCR</strong> — Treinar Tesseract com fontes de tabelas nutricionais brasileiras</li>
   </ul>
 </div>
 

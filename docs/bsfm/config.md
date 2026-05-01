@@ -6,14 +6,15 @@ Esta página centraliza os parâmetros básicos para executar e manter o BSFM.
 
 ### Estrutura do Banco
 O BSFM utiliza PostgreSQL (produção) ou SQLite (desenvolvimento) com as seguintes tabelas principais:
-- **Usuarios**: Dados dos usuários e métricas nutricionais
+- **Usuarios**: Dados dos usuários e métricas nutricionais (inclui Diabetes e Intolerancia)
 - **Refeicoes**: Catálogo de refeições completas
 - **Comidas**: Alimentos individuais e seus valores nutricionais
 - **CronogramaAlimentar**: Planos alimentares dos usuários
 - **Hospitais**: Instituições de saúde parceiras
-- **AnaliseIA**: Análises de alimentos realizadas por IA
+- **AnaliseIA**: Análises de alimentos realizadas por IA (inclui campos de feedback: PodeConsumir, PontuacaoSaude, AnaliseEmRelacaoAMeta, DicaBSFM)
 - **HistoricoProgresso**: Evolução temporal dos usuários
 - **ConsumoAgua**: Registro de hidratação diária
+- **RefeicoesAgendadas**: Refeições agendadas por dia da semana
 
 ### Configuração de Desenvolvimento
 
@@ -32,7 +33,8 @@ Crie `appsettings.Development.json`:
   },
   "ApiKeys": {
     "UsdaApiKey": "SUA_CHAVE_USDA",
-    "BrevoApiKey": "SUA_CHAVE_BREVO"
+    "BrevoApiKey": "SUA_CHAVE_BREVO",
+    "GroqApiKey": "SUA_CHAVE_GROQ"
   },
   "Logging": {
     "LogLevel": {
@@ -54,6 +56,7 @@ DB_TIMEOUT=30
 # APIs Externas
 USDA_API_KEY=sua_chave_usda_aqui
 BREVO_API_KEY=sua_chave_brevo_aqui
+GROQ_API_KEY=sua_chave_groq_aqui
 
 # Ambiente
 ASPNETCORE_ENVIRONMENT=Development
@@ -73,6 +76,7 @@ Para produção no Render, utilize variáveis de ambiente no painel do Web Servi
 | `DATABASE_URL` | Connection string do PostgreSQL (fornecido pelo Render) |
 | `USDA_API_KEY` | Chave da API USDA FoodData Central |
 | `BREVO_API_KEY` | Chave da API Brevo (Sendinblue) |
+| `GROQ_API_KEY` | Chave da API Groq (para feedback IA) |
 | `ASPNETCORE_ENVIRONMENT` | `Production` |
 | `PORT` | Porta atribuída pelo Render (automático) |
 
@@ -97,9 +101,21 @@ A documentação MkDocs está com:
 - `Dockerfile`: Containerização da aplicação .NET
 - `mkdocs.yml`: Configuração da documentação
 
+## Migrações Automáticas
+
+O sistema realiza migrações automáticas no startup para adicionar colunas necessárias sem precisar de scripts SQL manuais:
+
+- **Diabetes** (VARCHAR(50)) na tabela Usuarios
+- **Intolerancia** (TEXT) na tabela Usuarios
+- **PodeConsumir** (BOOLEAN) na tabela AnalisesIA
+- **PontuacaoSaude** (INTEGER) na tabela AnalisesIA
+- **AnaliseEmRelacaoAMeta** (TEXT) na tabela AnalisesIA
+- **DicaBSFM** (TEXT) na tabela AnalisesIA
+
 ## Boas Práticas
 
 - Não commitar chaves reais no repositório
 - Usar variáveis de ambiente/secrets no deploy
 - Revisar configurações antes de cada release
 - Manter o `appsettings.json` com valores padrão seguros
+- A GROQ_API_KEY é opcional - sem ela, o feedback IA não estará disponível

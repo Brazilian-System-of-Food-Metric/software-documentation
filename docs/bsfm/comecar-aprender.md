@@ -48,6 +48,25 @@ No dashboard você acompanha:
 - Evolução de peso e histórico
 - Indicadores de performance da rotina alimentar
 
+## Funcionalidades Avançadas
+
+### Analisador de Rótulos (OCR)
+1. Acesse o **Analisador de Rótulos**
+2. Aponte a câmera para a tabela nutricional de um produto
+3. O Tesseract.js extrai o texto automaticamente
+4. A IA do Groq analisa e retorna:
+   - **Health Score** (0-10)
+   - **Pode Consumir** (sim/não/moderado)
+   - **Análise personalizada** baseada no seu perfil
+   - **Dica BSFM** com sugestões
+
+### Dados de Saúde
+1. Acesse **Perfil** > **Dados de Saúde**
+2. Informe se possui:
+   - **Diabetes** (Tipo 1, Tipo 2, Pré-diabetes, Gestacional)
+   - **Intolerâncias Alimentares** (Lactose, Glúten, etc.)
+3. A IA considera esses dados nas análises nutricionais
+
 ## Fluxo sugerido de uso semanal
 
 - Segunda a sexta: registrar refeições diariamente
@@ -60,6 +79,8 @@ No dashboard você acompanha:
 - Primeira versão (v1.0): 20 de março de 2026
 - Versão remaster com metodologia SDD: 08 de abril de 2026
 - Remasterização final (v1.2.0): 28 de abril de 2026
+- Atualização PWA (v1.3.0): 29 de abril de 2026
+- CoreAnalytics (v1.3.5): 01 de maio de 2026
 
 ## Infraestrutura e deploy
 

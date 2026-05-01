@@ -15,6 +15,7 @@ timeline
         Abr (08) : Versão remaster SDD<br>Arquitetura e processo refinados
         Abr (28) : Remasterização final<br>Entrega acadêmica PIM 3º semestre
         Abr (29) : Atualização pré-definitiva<br>PWA e correções finais
+        Mai (01) : CoreAnalytics v1.3.5<br>Motor de insights nutricionais
 ```
 
 ## Fase Atual: Protótipo Acadêmico (2026)
@@ -67,6 +68,18 @@ timeline
 - **Correção de navegação**: Links rápidos da home page corrigidos
 - **Paleta de cores ajustada**: Barra de navegação preta com detalhes em laranja
 
+### Maio/2026 - CoreAnalytics v1.3.5 ✅
+**Status:** Concluído em 01/05/2026
+
+#### Entregas do CoreAnalytics
+- **BSFM.CoreAnalytics**: Módulo de análise de rótulos nutricionais com Split Architecture
+- **Analisador de Rótulos (OCR)**: Escaneamento de tabelas nutricionais com Tesseract.js
+- **Groq LLM Integration**: Motor NutriBrainService com Llama 3 para feedback personalizado
+- **Context Injector**: SystemPrompt com dados biométricos do usuário
+- **Health Score**: Pontuação de saúde (0-10) com feedback restritivo
+- **Dados de Saúde do Usuário**: Cadastro de diabetes e intolerâncias alimentares
+- **App Mobile - Login como Página Inicial**: App inicia diretamente no login
+
 ---
 
 ## Metas Futuras (Timeline de Desenvolvimento)
@@ -81,6 +94,7 @@ As metas abaixo representam os **objetivos almejados** para o futuro do projeto,
 - [x] **PWA**: Tornar a plataforma instalável em dispositivos móveis
 - [ ] **Gráficos de macros**: Evolução de proteínas, carboidratos e gorduras
 - [ ] **Sistema de conquistas**: Badges de progresso para motivar usuários
+- [ ] **Melhorias no OCR**: Treinar Tesseract com fontes de tabelas nutricionais brasileiras
 
 ### Médio Prazo
 - [ ] **App mobile**: Versão nativa para iOS e Android
@@ -88,6 +102,7 @@ As metas abaixo representam os **objetivos almejados** para o futuro do projeto,
 - [ ] **Integração com wearables**: Apple Health, Google Fit
 - [ ] **Notificações push**: Lembretes de refeições e hidratação
 - [ ] **Planos alimentares gerados por IA**: Cardápios personalizados automáticos
+- [ ] **Análise de múltiplos rótulos**: Comparação nutricional entre produtos
 
 ### Longo Prazo (Visão do Projeto)
 - [ ] **API pública**: Disponibilizar endpoints para desenvolvedores
@@ -127,5 +142,5 @@ As metas abaixo representam os **objetivos almejados** para o futuro do projeto,
 
 ---
 
-**Última atualização:** 29 de Abril de 2026  
+**Última atualização:** 01 de Maio de 2026  
 **Mantido por:** Equipe BSFM - UNIP

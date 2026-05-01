@@ -22,8 +22,8 @@ Este guia mostra como executar o projeto localmente e como fazer deploy em produ
 ### 1. Clonar Repositório
 
 ```bash
-git clone <url-do-repositorio>
-cd pim-03semestre-ads
+git clone https://github.com/Brazilian-System-of-Food-Metric/BSFM-APP.git
+cd BSFM-APP
 ```
 
 ### 2. Restaurar Dependências
@@ -63,6 +63,7 @@ DATABASE_URL=Host=localhost;Database=bsfm_dev;Username=bsfm_user;Password=senha_
 # APIs Externas
 USDA_API_KEY=sua-chave-usda-aqui
 BREVO_API_KEY=sua-chave-brevo-aqui
+GROQ_API_KEY=sua-chave-groq-aqui
 
 # Ambiente
 ASPNETCORE_ENVIRONMENT=Development
@@ -122,6 +123,7 @@ No painel do Web Service, vá em **Environment** e adicione:
 | `DATABASE_URL` | `Host=...;Database=bsfm_prod;Username=bsfm_user;Password=...` |
 | `USDA_API_KEY` | Sua chave da API USDA |
 | `BREVO_API_KEY` | Sua chave da API Brevo |
+| `GROQ_API_KEY` | Sua chave da API Groq |
 
 #### 4. Deploy Automático
 - O Render faz deploy automático a cada push na branch principal
@@ -153,7 +155,7 @@ Retorno esperado:
 - [ ] Repositório no GitHub
 - [ ] Conta no Render criada
 - [ ] Banco PostgreSQL criado no Render
-- [ ] Variáveis de ambiente configuradas
+- [ ] Variáveis de ambiente configuradas (incluindo GROQ_API_KEY)
 - [ ] Build passando no Render
 - [ ] Health check respondendo
 - [ ] Funcionalidades testadas em produção
@@ -177,4 +179,10 @@ ASPNETCORE_URLS=http://localhost:5001
 # Verifique se o .NET SDK 8 está instalado
 dotnet --version
 # Deve retornar 8.x.x
+```
+
+### Groq API não funciona
+```bash
+# Verifique se a GROQ_API_KEY está configurada
+# O serviço funciona sem ela, mas o feedback IA não estará disponível
 ```

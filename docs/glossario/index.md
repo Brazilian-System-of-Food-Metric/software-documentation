@@ -11,16 +11,18 @@ Este glossário define os principais termos, conceitos e siglas utilizados no Br
 **C** • [Caloria](#caloria) • [Carboidrato](#carboidrato) • [Chart.js](#chartjs) • [CORS](#cors)  
 **D** • [Dashboard](#dashboard) • [DTO](#dto)  
 **E** • [Entity Framework](#entity-framework) • [Endpoint](#endpoint)  
+**G** • [Groq](#groq)  
+**H** • [Health Score](#health-score)  
 **I** • [IA](#ia) • [IMC](#imc)  
 **J** • [JSON](#json)  
-**L** • [Leaflet](#leaflet) • [LGPD](#lgpd)  
+**L** • [Leaflet](#leaflet) • [LGPD](#lgpd) • [Llama 3](#llama-3)  
 **M** • [Macronutriente](#macronutriente) • [MkDocs](#mkdocs)  
-**N** • [.NET](#net)  
-**O** • [ONNX](#onnx) • [ORM](#orm)  
+**N** • [.NET](#net) • [NutriBrain](#nutribrain)  
+**O** • [OCR](#ocr) • [ONNX](#onnx) • [ORM](#orm)  
 **P** • [PostgreSQL](#postgresql) • [PWA](#pwa)  
 **R** • [Render](#render)  
-**S** • [SQLite](#sqlite)  
-**T** • [Tailwind CSS](#tailwind-css) • [TDEE](#tdee) • [TMB](#tmb)  
+**S** • [Split Architecture](#split-architecture) • [SQLite](#sqlite)  
+**T** • [Tailwind CSS](#tailwind-css) • [TDEE](#tdee) • [Tesseract.js](#tesseractjs) • [TMB](#tmb)  
 **U** • [USDA](#usda)  
 **Y** • [YOLO](#yolo)
 
@@ -87,10 +89,24 @@ URL específica em uma API que aceita requisições e retorna respostas.
 
 ---
 
+### G
+
+#### **Groq**
+Plataforma de inferência LLM de alta velocidade. Utilizada no BSFM para processar feedback nutricional personalizado via modelo Llama 3, com latência de 200-800ms.
+
+---
+
+### H
+
+#### **Health Score**
+Pontuação de saúde (0-10) atribuída pela IA a cada alimento analisado. Baseada em regras restritivas que consideram sódio, açúcar, gorduras saturadas e perfil do usuário.
+
+---
+
 ### I
 
 #### **IA** (Inteligência Artificial)
-Sistemas computacionais que simulam inteligência humana. No BSFM, utilizada para reconhecimento de alimentos via YOLO.
+Sistemas computacionais que simulam inteligência humana. No BSFM, utilizada para reconhecimento de alimentos via YOLO e análise de rótulos via Groq Llama 3.
 
 #### **IMC** (Índice de Massa Corporal)
 Medida que relaciona peso e altura para classificar o estado nutricional. Calculado como peso (kg) ÷ altura² (m).
@@ -112,6 +128,9 @@ Biblioteca JavaScript de mapas interativos. Utilizada no BSFM para o mapa SOS Sa
 #### **LGPD** (Lei Geral de Proteção de Dados)
 Lei brasileira que regula o tratamento de dados pessoais. O BSFM segue seus princípios no tratamento de dados dos usuários.
 
+#### **Llama 3**
+Modelo de linguagem de grande escala (LLM) da Meta. Utilizado via Groq API no BSFM para gerar feedback nutricional personalizado.
+
 ---
 
 ### M
@@ -129,9 +148,15 @@ Gerador de sites estáticos para documentação. Utilizado para criar a document
 #### **.NET**
 Plataforma de desenvolvimento da Microsoft. O BSFM utiliza .NET 8.0.
 
+#### **NutriBrain**
+Serviço do BSFM que integra com a API do Groq (Llama 3) para gerar análises nutricionais personalizadas. Parte do módulo BSFM.CoreAnalytics.
+
 ---
 
 ### O
+
+#### **OCR** (Optical Character Recognition)
+Tecnologia para reconhecimento de caracteres em imagens. No BSFM, o Tesseract.js executa OCR no navegador para extrair texto de tabelas nutricionais.
 
 #### **ONNX** (Open Neural Network Exchange)
 Formato aberto para representação de modelos de machine learning. Utilizado pelo YOLO no BSFM.
@@ -147,7 +172,7 @@ Técnica que mapeia objetos para tabelas de banco de dados. O Entity Framework C
 Sistema de banco de dados relacional open source. Utilizado como banco principal do BSFM em produção.
 
 #### **PWA** (Progressive Web App)
-Aplicação web que pode ser instalada como um aplicativo nativo. Planejado para versões futuras do BSFM.
+Aplicação web que pode ser instalada como um aplicativo nativo. Implementado no BSFM para permitir instalação em dispositivos móveis.
 
 ---
 
@@ -159,6 +184,9 @@ Plataforma de cloud computing. Utilizada para hospedar o BSFM em produção.
 ---
 
 ### S
+
+#### **Split Architecture**
+Arquitetura que divide o processamento entre frontend e backend. No BSFM, o OCR é executado no navegador (Tesseract.js) e apenas o texto extraído é enviado ao servidor para análise pela IA.
 
 #### **SQLite**
 Sistema de banco de dados relacional leve. Utilizado no BSFM para desenvolvimento local.
@@ -172,6 +200,9 @@ Framework CSS utilitário. Utilizado no frontend do BSFM.
 
 #### **TDEE** (Total Daily Energy Expenditure)
 Gasto energético total diário. Calculado no BSFM baseado na TMB e nível de atividade.
+
+#### **Tesseract.js**
+Biblioteca JavaScript de OCR que executa reconhecimento de caracteres diretamente no navegador. Utilizada no BSFM para escanear tabelas nutricionais.
 
 #### **TMB** (Taxa Metabólica Basal)
 Quantidade de calorias que o corpo queima em repouso. Calculada no BSFM usando fórmulas de Mifflin-St Jeor.
@@ -204,5 +235,5 @@ Algoritmo de detecção de objetos em tempo real. Utilizado no BSFM para reconhe
 
 ---
 
-**Última atualização:** Abril 2026  
+**Última atualização:** 01 de Maio de 2026  
 **Mantido por:** Equipe BSFM - UNIP
