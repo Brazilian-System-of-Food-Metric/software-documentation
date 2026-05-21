@@ -129,6 +129,7 @@ hide:
     <li>✅ <strong>PWA</strong> — Aplicação instalável em dispositivos móveis</li>
     <li>✅ <strong>Dados de Saúde</strong> — Cadastro de diabetes e intolerâncias alimentares</li>
     <li>✅ <strong>Health Score</strong> — Pontuação de saúde com feedback personalizado</li>
+    <li>✅ <strong>Modo escuro completo</strong> — Tema escuro consistente em todas as páginas</li>
   </ul>
 </div>
 
@@ -138,7 +139,6 @@ hide:
   
   <ul>
     <li>⬜ <strong>Melhorar precisão da IA</strong> — Treinar modelo com mais alimentos brasileiros</li>
-    <li>⬜ <strong>Modo escuro completo</strong> — Tema escuro consistente em todas as páginas</li>
     <li>⬜ <strong>Notificações</strong> — Lembretes de refeições e hidratação</li>
     <li>⬜ <strong>Exportação de dados</strong> — Gerar relatórios em PDF</li>
     <li>⬜ <strong>App mobile nativo</strong> — Versão para iOS e Android</li>
