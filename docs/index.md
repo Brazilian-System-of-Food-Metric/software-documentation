@@ -37,7 +37,7 @@ hide:
     <div class="bsfm-stat-label">Instituição de Ensino</div>
   </div>
   <div class="bsfm-stat-card">
-    <div class="bsfm-stat-number">4</div>
+    <div class="bsfm-stat-number">5</div>
     <div class="bsfm-stat-label">Integrantes do Grupo</div>
   </div>
   <div class="bsfm-stat-card">

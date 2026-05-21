@@ -64,10 +64,11 @@ A documentação completa está disponível em:
 
 ## 👥 Equipe
 
-- **Isaque de Medeiros**
-- **Yuri**
-- **Gustavo**
-- **Giovana**
+- **Isaque de Medeiros Pinto**
+- **Yuri Barbosa borges**
+- **Gustavo José Tenchena**
+- **Giovana Souza de Oliveira**
+- **Alexandre Silva Valle**
 
 ## 📄 Licença
 
