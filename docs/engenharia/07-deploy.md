@@ -244,3 +244,36 @@ warn: BSFM_JWT_SECRET não configurada: derivando de DATABASE_URL.
 
 Nenhum segredo tem valor fixo no código. Quem conhece a `DATABASE_URL` já controla o
 banco — derivar dela não amplia o poder do atacante.
+---
+
+## 10. Banco existente: schema aditivo (correção do erro 42703)
+
+Sintoma no login:
+
+```
+Npgsql.PostgresException: 42703: column u.AtualizadoEm does not exist
+```
+
+**Causa:** a migration inicial foi gerada contra um banco vazio, então começa com
+`CREATE TABLE "Usuarios"`. No banco real a tabela já existia, a migration falhava, e o
+`catch` mantinha o serviço no ar — mas com o schema antigo. O EF, então, consultava
+colunas que não existiam.
+
+**Correção:** `PreparadorSchema` detecta se `Usuarios` já existe e, nesse caso, aplica
+DDL **aditivo e idempotente** em vez de rodar a migration:
+
+- `ALTER TABLE ... ADD COLUMN IF NOT EXISTS` para as colunas novas de `Usuarios`,
+  `AnalisesIA` e `Hospitais`;
+- `CREATE TABLE IF NOT EXISTS` para `Sessoes`, `RefreshTokens`, `Auditoria`,
+  `ConsentimentosLGPD`, `Metas` e `Alimentos`;
+- `CREATE INDEX IF NOT EXISTS` para os índices;
+- índice único de e-mail **condicional**: se houver duplicata, cria índice comum e
+  registra aviso em vez de derrubar o serviço;
+- registra a migration inicial em `__EFMigrationsHistory` (baseline), para que
+  migrations futuras sejam incrementais.
+
+Banco novo continua usando `Database.Migrate()`.
+
+**Verificado** com um Postgres contendo o schema da v1: após o boot, as 9 colunas novas
+apareceram, as 6 tabelas foram criadas, o baseline foi gravado, `POST /api/auth/cadastrar`
+respondeu 201 e `POST /api/auth/login` respondeu 200.
