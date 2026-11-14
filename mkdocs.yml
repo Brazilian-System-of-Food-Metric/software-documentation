@@ -108,6 +108,7 @@ nav:
     - Deploy no Render: engenharia/07-deploy.md
     - Paridade com o Original: engenharia/08-paridade.md
     - Inventario Completo da v1: engenharia/09-inventario-v1.md
+    - Auditoria e Avaliacao: engenharia/10-auditoria.md
   - Referencia:
     - Referencia Tecnica: bsfm/referencia.md
     - Casos de Uso: caso-de-uso/index.md
