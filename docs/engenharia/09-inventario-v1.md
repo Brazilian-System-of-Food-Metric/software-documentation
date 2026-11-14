@@ -1,5 +1,12 @@
 # DOC-09 — Inventário completo da v1 e matriz de paridade
 
+> **Nota de auditoria (2026-11-14, DOC-10).** A seção 10 deste documento estava
+> otimista: itens como 2FA, edição de nome/senha, feedback contextual, edição de
+> plano e exportação/exclusão LGPD apareciam como prontos sem interface ou sem
+> rota completa. A contagem de asserções também diverge entre as seções 8 (315) e
+> 10 (310). O DOC-10 registra a conferência item a item, o que foi corrigido e o
+> estado real após a auditoria. Use o DOC-10 como fonte de status.
+
 **Data:** 2026-11-14
 **Fonte:** `C:\Users\Isaque\Documents\pim-4-semestre\BSFMappClone` — **73 arquivos**, lidos
 integralmente (código, páginas, serviços, SQL, documentação e configuração).
