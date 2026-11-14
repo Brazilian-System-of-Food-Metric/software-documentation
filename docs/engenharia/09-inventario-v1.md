@@ -399,7 +399,7 @@ Atualizado em 2026-11-14, após as rodadas de implementação.
 - [x] **Feedback por item do diário**
 - [x] **Salvar prato do diário no plano** (dia e refeição)
 - [x] **Importar prescrição por OCR**, com revisão antes de salvar
-- [ ] Concluir refeição do plano e resumo do dia
+- [x] **Concluir refeição do plano** (checkbox e contador)
 
 ### Conteúdo e utilidades
 
@@ -409,7 +409,7 @@ Atualizado em 2026-11-14, após as rodadas de implementação.
 - [x] **Libras (VLibras)**
 - [x] **Perfil de saúde (diabetes e intolerâncias)**
 - [x] **Emergências: 5 unidades de SP com telefone e Waze**
-- [ ] Mapa interativo (Leaflet) para as unidades
+- [x] **Mapa interativo (Leaflet)** com as 5 unidades
 - [x] **Tabela de status do projeto** na landing
 - [ ] Vídeo de demonstração na landing
 - [ ] Gerar APK
@@ -422,10 +422,10 @@ Atualizado em 2026-11-14, após as rodadas de implementação.
 | Autenticação e conta | 9 | 0 |
 | Painel | 10 | 0 |
 | Análise | 8 | 0 |
-| Diário, metas e planos | 7 | 1 |
-| Conteúdo e utilidades | 9 | 3 |
-| **Total** | **43** | **4** |
+| Diário, metas e planos | 8 | 0 |
+| Conteúdo e utilidades | 10 | 2 |
+| **Total** | **45** | **2** |
 
-Os 4 pendentes estão listados com justificativa na seção 7 (P1 e P2). Nenhum deles é
+Os 2 pendentes estão listados com justificativa na seção 7 (P1 e P2). Nenhum deles é
 regressão: são funcionalidades que dependem de dado externo (mapa, DATASUS), de serviço
 (LLM, OCR de prescrição) ou de decisão de produto (pontuação de saúde).
