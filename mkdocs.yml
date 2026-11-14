@@ -105,6 +105,7 @@ nav:
     - Rotas e Testes: engenharia/04-rotas-e-testes.md
     - Camada Nutricional: engenharia/05-camada-nutricional.md
     - Base TACO: engenharia/06-base-taco.md
+    - Deploy no Render: engenharia/07-deploy.md
   - Referencia:
     - Referencia Tecnica: bsfm/referencia.md
     - Casos de Uso: caso-de-uso/index.md
