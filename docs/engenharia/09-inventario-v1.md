@@ -386,7 +386,7 @@ Atualizado em 2026-11-14, após as rodadas de implementação.
 - [x] **Análise de rótulo com OCR local + leitor no servidor**
 - [x] Ajuste de porção com atalhos (50/100/150/200 g)
 - [x] Tabela nutricional da porção
-- [ ] Câmera ao vivo (`getUserMedia`)
+- [x] **Câmera ao vivo** (`getUserMedia`, com fallback para arquivo)
 - [x] **Anel de pontuação (0–10)** no feedback
 - [x] **Feedback restritivo** por diabetes e intolerância (regras)
 
@@ -397,7 +397,7 @@ Atualizado em 2026-11-14, após as rodadas de implementação.
 - [x] **Gráficos de peso e IMC na tela de metas**
 - [x] Planos semanais (7 dias × 4 refeições, CRUD)
 - [x] **Feedback por item do diário**
-- [ ] Salvar prato do diário direto no plano
+- [x] **Salvar prato do diário no plano** (dia e refeição)
 - [x] **Importar prescrição por OCR**, com revisão antes de salvar
 - [ ] Concluir refeição do plano e resumo do dia
 
@@ -410,9 +410,10 @@ Atualizado em 2026-11-14, após as rodadas de implementação.
 - [x] **Perfil de saúde (diabetes e intolerâncias)**
 - [x] **Emergências: 5 unidades de SP com telefone e Waze**
 - [ ] Mapa interativo (Leaflet) para as unidades
-- [ ] Tabela de status do projeto e vídeo na landing
+- [x] **Tabela de status do projeto** na landing
+- [ ] Vídeo de demonstração na landing
 - [ ] Gerar APK
-- [ ] Keep-alive do Render
+- [x] **Keep-alive do Render** (workflow com segredo `RENDER_URLS`)
 
 ### Resumo
 
@@ -420,11 +421,11 @@ Atualizado em 2026-11-14, após as rodadas de implementação.
 |---|---|---|
 | Autenticação e conta | 9 | 0 |
 | Painel | 10 | 0 |
-| Análise | 7 | 1 |
-| Diário, metas e planos | 6 | 2 |
-| Conteúdo e utilidades | 7 | 4 |
-| **Total** | **39** | **7** |
+| Análise | 8 | 0 |
+| Diário, metas e planos | 7 | 1 |
+| Conteúdo e utilidades | 9 | 3 |
+| **Total** | **43** | **4** |
 
-Os 7 pendentes estão listados com justificativa na seção 7 (P1 e P2). Nenhum deles é
+Os 4 pendentes estão listados com justificativa na seção 7 (P1 e P2). Nenhum deles é
 regressão: são funcionalidades que dependem de dado externo (mapa, DATASUS), de serviço
 (LLM, OCR de prescrição) ou de decisão de produto (pontuação de saúde).
