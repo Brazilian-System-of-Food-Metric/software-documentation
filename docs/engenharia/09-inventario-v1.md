@@ -347,3 +347,84 @@ Toda afirmação deste documento veio de leitura direta dos 73 arquivos, com ext
 programática de: rotas (`app.Map*` e `[Http*]`), funções JS (`function nome(`), endpoints
 chamados (`fetch(`), chaves de armazenamento (`localStorage`), ids de tela (`id="..."`),
 assinaturas de serviço, comandos SQL (`CREATE/ALTER TABLE`) e títulos de seção das páginas.
+
+---
+
+## 10. Estado da execução (checklist)
+
+Atualizado em 2026-11-14, após as rodadas de implementação.
+
+### Autenticação e conta
+
+- [x] Login com token assinado
+- [x] Cadastro completo com verificação por e-mail
+- [x] **Esqueci minha senha (2 passos)** — e-mail → código → nova senha
+- [x] Troca de senha exigindo a atual
+- [x] **Editar e-mail** (com senha de confirmação e reenvio de verificação)
+- [x] **Editar data de nascimento** (idade passa a ser derivada)
+- [x] Sessões por dispositivo, com encerramento
+- [x] 2FA TOTP
+- [x] **Termos de uso e LGPD completos** (texto no perfil)
+
+### Painel
+
+- [x] Sidebar com navegação
+- [x] IMC, TMB e gasto total
+- [x] Água do dia com barra
+- [x] **Água com valor livre**
+- [x] **Gráfico semanal de hidratação**
+- [x] **Gráfico de evolução de peso**
+- [x] **Banner de perfil de saúde incompleto**
+- [x] Tema claro/escuro
+- [ ] Modal de peso (hoje a edição é por API)
+- [ ] Água: remover último registro pela interface
+
+### Análise
+
+- [x] Busca no catálogo TACO (582 itens)
+- [x] Upload de foto com reconhecimento opcional
+- [x] **Análise de rótulo com OCR local + leitor no servidor**
+- [x] Ajuste de porção com atalhos (50/100/150/200 g)
+- [x] Tabela nutricional da porção
+- [ ] Câmera ao vivo (`getUserMedia`)
+- [ ] Anel de pontuação de saúde (0–10)
+- [ ] Feedback restritivo por diabetes/intolerância
+
+### Diário, metas e planos
+
+- [x] Diário agrupado por dia
+- [x] Metas com histórico
+- [x] **Gráficos de peso e IMC na tela de metas**
+- [x] Planos semanais (7 dias × 4 refeições, CRUD)
+- [ ] Feedback por item do diário
+- [ ] Salvar prato do diário direto no plano
+- [ ] Importar prescrição nutricional por OCR
+- [ ] Concluir refeição do plano e resumo do dia
+
+### Conteúdo e utilidades
+
+- [x] Landing pública com 7 seções
+- [x] Botão de instalação na landing, no menu e no login
+- [x] Links de documentação
+- [x] **Libras (VLibras)**
+- [x] **Perfil de saúde (diabetes e intolerâncias)**
+- [x] **Emergências: 5 unidades de SP com telefone e Waze**
+- [ ] Mapa interativo (Leaflet) para as unidades
+- [ ] Tabela de status do projeto e vídeo na landing
+- [ ] Gerar APK
+- [ ] Keep-alive do Render
+
+### Resumo
+
+| Categoria | Pronto | Pendente |
+|---|---|---|
+| Autenticação e conta | 9 | 0 |
+| Painel | 8 | 2 |
+| Análise | 5 | 3 |
+| Diário, metas e planos | 4 | 4 |
+| Conteúdo e utilidades | 6 | 4 |
+| **Total** | **32** | **13** |
+
+Os 13 pendentes estão listados com justificativa na seção 7 (P1 e P2). Nenhum deles é
+regressão: são funcionalidades que dependem de dado externo (mapa, DATASUS), de serviço
+(LLM, OCR de prescrição) ou de decisão de produto (pontuação de saúde).
