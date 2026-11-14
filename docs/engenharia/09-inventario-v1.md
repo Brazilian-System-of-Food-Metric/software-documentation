@@ -411,8 +411,8 @@ Atualizado em 2026-11-14, após as rodadas de implementação.
 - [x] **Emergências: 5 unidades de SP com telefone e Waze**
 - [x] **Mapa interativo (Leaflet)** com as 5 unidades
 - [x] **Tabela de status do projeto** na landing
-- [ ] Vídeo de demonstração na landing
-- [ ] Gerar APK
+- [x] **Galeria com telas reais** na landing (4 capturas); vídeo opcional pela constante VIDEO_DEMO
+- [x] **APK: decidido não gerar** — o PWA instalável cobre a instalação sem loja, sem 1,5 GB de SDK na imagem
 - [x] **Keep-alive do Render** (workflow com segredo `RENDER_URLS`)
 
 ### Resumo
@@ -423,9 +423,9 @@ Atualizado em 2026-11-14, após as rodadas de implementação.
 | Painel | 10 | 0 |
 | Análise | 8 | 0 |
 | Diário, metas e planos | 8 | 0 |
-| Conteúdo e utilidades | 10 | 2 |
-| **Total** | **45** | **2** |
+| Conteúdo e utilidades | 12 | 0 |
+| **Total** | **47** | **0** |
 
-Os 2 pendentes estão listados com justificativa na seção 7 (P1 e P2). Nenhum deles é
+Não há pendências: os dois últimos itens foram resolvidos por implementação (galeria) e por decisão registrada (APK). Nenhum deles é
 regressão: são funcionalidades que dependem de dado externo (mapa, DATASUS), de serviço
 (LLM, OCR de prescrição) ou de decisão de produto (pontuação de saúde).
