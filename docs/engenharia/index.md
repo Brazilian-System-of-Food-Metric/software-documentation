@@ -32,6 +32,7 @@ Nenhum número aparece aqui sem uma suíte que o produza.
 | 06 | [Base TACO](06-base-taco.md) | 582 alimentos importados, ranqueamento por preparo e a chave de assinatura por sessão |
 | 07 | [Deploy no Render](07-deploy.md) | variáveis de ambiente e diagnóstico dos erros de cadastro e e-mail |
 | 08 | [Paridade com o original](08-paridade.md) | comparação tela a tela entre o site antigo e o novo, e o que foi restaurado |
+| 09 | [Inventário completo da v1](09-inventario-v1.md) | 73 arquivos, 35 endpoints, 11 páginas e a lista priorizada de lacunas |
 
 ---
 
