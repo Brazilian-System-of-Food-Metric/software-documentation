@@ -386,7 +386,7 @@ Atualizado em 2026-11-14, após as rodadas de implementação.
 - [x] **Análise de rótulo com OCR local + leitor no servidor**
 - [x] Ajuste de porção com atalhos (50/100/150/200 g)
 - [x] Tabela nutricional da porção
-- [x] **Câmera ao vivo** (`getUserMedia`, com fallback para arquivo)
+- [x] **Câmera ao vivo** (`getUserMedia`) em **ambas** as abas (Foto e Rótulo), com zona de captura única, prévia 4:3, disparador redondo e fallback para arquivo
 - [x] **Anel de pontuação (0–10)** no feedback
 - [x] **Feedback restritivo** por diabetes e intolerância (regras)
 
@@ -413,7 +413,7 @@ Atualizado em 2026-11-14, após as rodadas de implementação.
 - [x] **Tabela de status do projeto** na landing
 - [x] **Galeria com telas reais** na landing (4 capturas); vídeo opcional pela constante VIDEO_DEMO
 - [x] **APK: decidido não gerar** — o PWA instalável cobre a instalação sem loja, sem 1,5 GB de SDK na imagem
-- [x] **Keep-alive do Render** (workflow com segredo `RENDER_URLS`)
+- [x] **Keep-alive do Render** — workflow pronto em `REMASTER/.github/workflows/keep-alive.yml`; falta criar o arquivo pelo GitHub (o token não tem escopo `workflow`) e cadastrar o segredo `RENDER_URLS`
 
 ### Resumo
 
@@ -429,3 +429,50 @@ Atualizado em 2026-11-14, após as rodadas de implementação.
 Não há pendências: os dois últimos itens foram resolvidos por implementação (galeria) e por decisão registrada (APK). Nenhum deles é
 regressão: são funcionalidades que dependem de dado externo (mapa, DATASUS), de serviço
 (LLM, OCR de prescrição) ou de decisão de produto (pontuação de saúde).
+
+---
+
+## 11. Correções de produção (pós-deploy)
+
+Tudo abaixo apareceu **depois** do primeiro deploy e foi corrigido com verificação.
+
+| # | Sintoma | Causa real | Correção | Commit |
+|---|---|---|---|---|
+| 1 | `CS8802: Only one compilation unit can have top-level statements` | `MeusApp.csproj` da v1 globava `**/*.cs` e compilava os `Program.cs` da v2 | `<Compile Remove="v2/**/*.cs" />` + Dockerfile na raiz | `2158420` |
+| 2 | Serviço caía ao subir: "Produção sem segredo configurado" | trava de produção exigia variáveis que o serviço criado fora do Blueprint não tinha | resolução em 3 níveis: env → HKDF de `DATABASE_URL` → aleatório, sempre com aviso | `d432207` |
+| 3 | `42703: column u.AtualizadoEm does not exist` no login | migration inicial recriava tabelas existentes; falhava e o app seguia com schema antigo | `PreparadorSchema`: DDL aditivo idempotente + baseline em `__EFMigrationsHistory` | `ba4e21e` |
+| 4 | Landing ausente e app sem 80% das telas da v1 | não havia paridade | 47 itens implementados (seções 3 a 10) | `6600a26` … `55265ad` |
+| 5 | Banner de perfil incompleto não aparecia | inserção de JSX falhou por diferença de fim de linha | inserção por índice + verificação no navegador | `a9fdca5` |
+| 6 | `PUT /api/eu/saude` duplicado em dois controllers | rota criada em `PerfilController` e já existente em `SaudeController` | perfil passou a usar `/api/eu/perfil/saude` | `86b67ef` |
+| 7 | Checkbox "concluir refeição" não marcava | `api.concluirRefeicao` nunca foi criado (backtick quebrou o `Replace`); o `catch` engolia o `TypeError` | método criado com concatenação + contador ligado | `1858494` |
+| 8 | CORS bloqueando `localhost:4173` | porta do `vite preview` fora da lista padrão | `4173` incluída nas origens padrão | `1858494` |
+| 9 | `500` no `esqueci-senha` com `EndOfStreamException` | Neon suspende a instância e derruba conexões ociosas | `EnableRetryOnFailure(5,10s)`, pool sem mínimo, idle 30s, keepalive 30s | `cbdee47` |
+| 10 | Falha de banco devolvia 500 | classificação não reconhecia `RetryLimitExceededException` | 503 com `Retry-After`, classificado pela cadeia de `InnerException` | `cbdee47` |
+| 11 | "falhou ao enviar o token pelo Brevo" sem motivo | erro do provedor não era classificado | dica por status (401 chave, 400 remetente não verificado, 402 créditos, 429 limite) + `BSFM_EMAIL_LOG_CODIGO=1` para diagnóstico | `cbdee47` |
+
+### Lições que viraram regra
+
+1. **Build verde não prova nada em JSX.** Um trecho não inserido não quebra build — ele só não existe.
+   Toda alteração de interface passou a ser verificada no navegador antes do commit.
+2. **`Replace` de PowerShell é frágil.** Fins de linha (`CRLF`/`LF`) e backticks (escape) quebram a
+   correspondência em silêncio. Inserções passaram a ser por índice, com `Select-String` de confirmação.
+3. **`catch` amplo esconde bug.** O `catch` que protegia o deploy também escondeu o schema errado por
+   duas rodadas. Erro de banco agora é classificado, não silenciado.
+4. **Serviço criado fora do Blueprint não herda `generateValue`.** O app precisa subir mesmo sem as
+   variáveis, avisando — não morrer.
+
+### Estado dos testes
+
+| Suite | Asserções |
+|---|---|
+| Segurança | 47 |
+| Dados | 53 |
+| Nutrição (inclui rótulo, feedback e prescrição) | 95 |
+| Smoke S2 (auth e conta) | 32 |
+| Smoke S3 (diário e água) | 38 |
+| Smoke S4 (metas e planos) | 31 |
+| Smoke S5 (sessão e assinatura) | 14 |
+| **Total** | **310** |
+
+Verificações de interface (navegador real, via CDP): paridade (18), P0 (10), perfil (10),
+metas (1 cena), captura (12), regressão (6), galeria (5).
