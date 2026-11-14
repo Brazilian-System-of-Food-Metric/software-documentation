@@ -97,6 +97,14 @@ nav:
     - Instalacao: bsfm/instalacao.md
     - Configuracao: bsfm/config.md
     - Comecar a Aprender: bsfm/comecar-aprender.md
+  - Engenharia:
+    - Visao Geral: engenharia/index.md
+    - Engenharia Reversa: engenharia/01-engenharia-reversa.md
+    - Analise do App: engenharia/02-analise-do-app.md
+    - Schema e Migracao: engenharia/03-schema-e-migracao.md
+    - Rotas e Testes: engenharia/04-rotas-e-testes.md
+    - Camada Nutricional: engenharia/05-camada-nutricional.md
+    - Base TACO: engenharia/06-base-taco.md
   - Referencia:
     - Referencia Tecnica: bsfm/referencia.md
     - Casos de Uso: caso-de-uso/index.md
