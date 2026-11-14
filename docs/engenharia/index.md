@@ -48,11 +48,19 @@ Nenhum número aparece aqui sem uma suíte que o produza.
 
 ## O front
 
-![Painel](img/painel.png)
+Mesmo código no computador e no celular: o que muda é o layout.
 
-![Busca de alimento](img/analisar.png)
+**Desktop** — sidebar fixa, cartões de métricas e tema claro/escuro.
 
-![Entrar](img/login.png)
+![Painel no desktop](img/painel.png)
+
+**Celular** — barra inferior de navegação, alvos de toque grandes e área segura.
+
+<img src="img/celular.png" alt="Painel no celular" width="300">
+
+**Instalável** — o app abre em tela cheia, com ícone próprio e shell offline.
+
+<img src="img/analisar.png" alt="Busca de alimento no celular" width="300">
 
 ---
 

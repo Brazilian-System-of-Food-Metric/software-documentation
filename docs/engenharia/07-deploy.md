@@ -148,3 +148,66 @@ Se responder `origem: semente`, o CSV não entrou na imagem.
 | `smoke-s4.ps1` (nutrição) | 31 |
 | `smoke-s5.ps1` (cadastro e verificação) | 14 |
 | **Total** | **281** |
+---
+
+## 7. O erro de build do deploy (CS8802)
+
+Sintoma no log do Render:
+
+```
+error CS8802: Only one compilation unit can have top-level statements.
+  /app/v2/backend/BSFM.Api/Program.cs
+  /app/v2/backend/BSFM.Seguranca.Verificacao/Program.cs
+```
+
+**Causa:** o projeto da v1 (`MeusApp.csproj`) usa o glob padrão do SDK, que compila
+`**/*.cs` a partir da raiz do repositório. Ao adicionar `v2/` no mesmo repositório, o build
+da v1 passou a compilar os `Program.cs` da v2 — e cada um deles usa top-level statements,
+o que só é permitido uma vez por assembly.
+
+**Correção:** exclusão explícita no `MeusApp.csproj`:
+
+```xml
+<ItemGroup>
+  <Compile Remove="v2/**/*.cs" />
+  <Content Remove="v2/**" />
+  <None Remove="v2/**" />
+  <EmbeddedResource Remove="v2/**" />
+</ItemGroup>
+```
+
+Verificado com `dotnet build MeusApp.csproj -c Release`: compila sem erro.
+
+**Segunda correção:** o Dockerfile da v2 saiu de `v2/Dockerfile` para a **raiz**.
+O Render procura `Dockerfile` na raiz por padrão; com o arquivo na subpasta era preciso
+configurar `dockerfilePath` **e** `dockerContext`, e a combinação é uma fonte comum de
+falha. Agora o Blueprint só declara `dockerfilePath: ./Dockerfile`.
+O Dockerfile antigo da v1 foi preservado como `Dockerfile.v1`.
+
+---
+
+## 8. Aplicativo instalável (PWA)
+
+A v2 é instalável no celular e no desktop. O mesmo código serve os dois — muda o layout:
+
+| Plataforma | Layout |
+|---|---|
+| desktop | sidebar fixa, cartões lado a lado, tema claro/escuro |
+| celular | barra inferior de navegação, alvos de 44 px, `env(safe-area-inset-*)` |
+| instalado | `display: standalone`, ícone próprio, sem barra do navegador |
+
+Como instalar:
+
+- **Android/Chrome** — convite automático, ou menu → "Instalar aplicativo";
+- **iOS/Safari** — Compartilhar → "Adicionar à Tela de Início";
+- **desktop/Chrome** — ícone de instalação na barra de endereço.
+
+Arquivos: `v2/web/public/manifest.webmanifest`, `v2/web/public/sw.js` e ícones em
+`v2/web/public/icons` (os mesmos da identidade da v1).
+
+O service worker nunca cacheia `/api/*` — dado de saúde não pode ficar velho nem vazar
+entre sessões. O shell (HTML, CSS, JS e ícones) fica disponível offline.
+
+**Verificação:** o script `v2/web/verificar-layout.mjs` abre a aplicação, compara desktop
+(1280×800) e celular (390×844), confere a troca de layout e valida o manifest e o
+service worker servidos pelo container.
