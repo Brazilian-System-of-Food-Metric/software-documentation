@@ -376,8 +376,8 @@ Atualizado em 2026-11-14, após as rodadas de implementação.
 - [x] **Gráfico de evolução de peso**
 - [x] **Banner de perfil de saúde incompleto**
 - [x] Tema claro/escuro
-- [ ] Modal de peso (hoje a edição é por API)
-- [ ] Água: remover último registro pela interface
+- [x] **Atualização de peso no painel** (recalcula IMC, TMB e gasto)
+- [x] **Água: desfazer último registro**
 
 ### Análise
 
@@ -387,8 +387,8 @@ Atualizado em 2026-11-14, após as rodadas de implementação.
 - [x] Ajuste de porção com atalhos (50/100/150/200 g)
 - [x] Tabela nutricional da porção
 - [ ] Câmera ao vivo (`getUserMedia`)
-- [ ] Anel de pontuação de saúde (0–10)
-- [ ] Feedback restritivo por diabetes/intolerância
+- [x] **Anel de pontuação (0–10)** no feedback
+- [x] **Feedback restritivo** por diabetes e intolerância (regras)
 
 ### Diário, metas e planos
 
@@ -396,9 +396,9 @@ Atualizado em 2026-11-14, após as rodadas de implementação.
 - [x] Metas com histórico
 - [x] **Gráficos de peso e IMC na tela de metas**
 - [x] Planos semanais (7 dias × 4 refeições, CRUD)
-- [ ] Feedback por item do diário
+- [x] **Feedback por item do diário**
 - [ ] Salvar prato do diário direto no plano
-- [ ] Importar prescrição nutricional por OCR
+- [x] **Importar prescrição por OCR**, com revisão antes de salvar
 - [ ] Concluir refeição do plano e resumo do dia
 
 ### Conteúdo e utilidades
@@ -419,12 +419,12 @@ Atualizado em 2026-11-14, após as rodadas de implementação.
 | Categoria | Pronto | Pendente |
 |---|---|---|
 | Autenticação e conta | 9 | 0 |
-| Painel | 8 | 2 |
-| Análise | 5 | 3 |
-| Diário, metas e planos | 4 | 4 |
-| Conteúdo e utilidades | 6 | 4 |
-| **Total** | **32** | **13** |
+| Painel | 10 | 0 |
+| Análise | 7 | 1 |
+| Diário, metas e planos | 6 | 2 |
+| Conteúdo e utilidades | 7 | 4 |
+| **Total** | **39** | **7** |
 
-Os 13 pendentes estão listados com justificativa na seção 7 (P1 e P2). Nenhum deles é
+Os 7 pendentes estão listados com justificativa na seção 7 (P1 e P2). Nenhum deles é
 regressão: são funcionalidades que dependem de dado externo (mapa, DATASUS), de serviço
 (LLM, OCR de prescrição) ou de decisão de produto (pontuação de saúde).
