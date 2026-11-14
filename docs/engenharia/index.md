@@ -30,7 +30,8 @@ Nenhum número aparece aqui sem uma suíte que o produza.
 | 04 | [Rotas e testes](04-rotas-e-testes.md) | migração para controllers, erro padronizado e testes idempotentes |
 | 05 | [Camada nutricional](05-camada-nutricional.md) | por que o YOLO saiu do centro e como o catálogo passou a produzir os números |
 | 06 | [Base TACO](06-base-taco.md) | 582 alimentos importados, ranqueamento por preparo e a chave de assinatura por sessão |
-| 07 | [Deploy no Render](07-deploy.md) | variáveis de ambiente obrigatórias e diagnóstico dos erros de cadastro e e-mail |
+| 07 | [Deploy no Render](07-deploy.md) | variáveis de ambiente e diagnóstico dos erros de cadastro e e-mail |
+| 08 | [Paridade com o original](08-paridade.md) | comparação tela a tela entre o site antigo e o novo, e o que foi restaurado |
 
 ---
 
@@ -42,7 +43,7 @@ Nenhum número aparece aqui sem uma suíte que o produza.
 | Alimentos no catálogo | 582 |
 | Rotas migradas para controllers | 29 |
 | Asserções automatizadas | **281, todas passando** |
-| Telas no front React | 6 (Entrar, Criar conta, Painel, Analisar, Diário, Perfil) |
+| Telas no front React | 8 (Landing, Entrar, Criar conta, Painel, Analisar, Diário, Planos, Metas, Perfil) |
 
 ---
 

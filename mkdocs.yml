@@ -106,6 +106,7 @@ nav:
     - Camada Nutricional: engenharia/05-camada-nutricional.md
     - Base TACO: engenharia/06-base-taco.md
     - Deploy no Render: engenharia/07-deploy.md
+    - Paridade com o Original: engenharia/08-paridade.md
   - Referencia:
     - Referencia Tecnica: bsfm/referencia.md
     - Casos de Uso: caso-de-uso/index.md
