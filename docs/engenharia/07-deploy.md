@@ -31,8 +31,8 @@ Resultado: uma URL, um container, sem CORS entre front e API.
 
 | Variável | Como obter | Sintoma se faltar |
 |---|---|---|
-| `BSFM_JWT_SECRET` | `generateValue: true` no Blueprint | serviço **não sobe** (trava de produção) |
-| `BSFM_HMAC_SECRET` | `generateValue: true` no Blueprint | serviço **não sobe** |
+| `BSFM_JWT_SECRET` | `generateValue: true` no Blueprint | derivado de `DATABASE_URL` + aviso no log |
+| `BSFM_HMAC_SECRET` | `generateValue: true` no Blueprint | idem |
 | `DATABASE_URL` | mesmo Postgres da v1 (Neon) | cai para SQLite efêmero — dados somem a cada deploy |
 
 > A trava é intencional: os valores padrão do código são públicos. Subir com eles
@@ -211,3 +211,36 @@ entre sessões. O shell (HTML, CSS, JS e ícones) fica disponível offline.
 **Verificação:** o script `v2/web/verificar-layout.mjs` abre a aplicação, compara desktop
 (1280×800) e celular (390×844), confere a troca de layout e valida o manifest e o
 service worker servidos pelo container.
+---
+
+## 9. Segredos: por que o serviço já subiu sem eles
+
+A primeira versão do serviço foi criada **manualmente**, então o `generateValue: true`
+do Blueprint não foi aplicado — e a trava de produção derrubou o processo:
+
+```
+Unhandled exception. System.InvalidOperationException:
+Produção sem segredo configurado: BSFM_JWT_SECRET, BSFM_HMAC_SECRET.
+```
+
+A trava estava certa (os valores padrão do código são públicos), mas o comportamento
+certo é **degradar com aviso**, não impedir o serviço de existir.
+
+A resolução agora tem três níveis:
+
+| Ordem | Fonte | Estabilidade |
+|---|---|---|
+| 1 | variável de ambiente | total, com rotação planejada |
+| 2 | derivada de `DATABASE_URL` (HKDF-SHA256) | sobrevive a reinícios e deploys |
+| 3 | aleatória por processo | sessões caem a cada restart |
+
+O nível 2 existe para o caso real de um serviço criado sem as variáveis: o app sobe,
+os tokens continuam válidos, e o log registra exatamente o que fazer.
+
+```
+warn: BSFM_JWT_SECRET não configurada: derivando de DATABASE_URL.
+      Funciona e é estável, mas o recomendado é definir a variável no serviço.
+```
+
+Nenhum segredo tem valor fixo no código. Quem conhece a `DATABASE_URL` já controla o
+banco — derivar dela não amplia o poder do atacante.
